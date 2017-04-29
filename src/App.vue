@@ -9,6 +9,11 @@
 import Header2 from './common/top-head'
 export default {
   name: 'app',
+  data() {
+    return {
+
+    }
+  },
   components: {
     Header2
   }
