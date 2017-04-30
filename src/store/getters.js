@@ -3,5 +3,6 @@
  */
 
 export default {
-  title: state => state.title
+  title: state => state.title,
+  isNew: state => state.isNew
 }

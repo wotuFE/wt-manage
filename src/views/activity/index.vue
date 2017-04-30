@@ -14,24 +14,31 @@
 </template>
 
 <script>
-import BeforeActivitiesList from './beforeActivitiesList'
-import RecentActivity from './recentActivity'
 export default {
     mounted() {
         if (this.$store.state.isNew) {
-            this.$router.push('/activity/recentActivity');
+            this.$router.push({name: 'recentActivity'});
         } else {
-            this.$router.push('/activity/beforeActivitiesList');
+            this.$router.push({name: 'beforeActivitiesList'});
         }
     },
     data() {
-        return {
-
-        }
+      return {
+      }
     },
-    components: {
-        BeforeActivitiesList,
-        RecentActivity
+    computed: {
+      name () {
+        return this.$route.name
+      }  
+    },
+    watch: {
+      name (val) {
+        if (this.$store.state.isNew) {
+            this.$router.push({name: 'recentActivity'});
+        } else {
+            this.$router.push({name: 'beforeActivitiesList'});
+        }
+      }
     }
 }
 </script>

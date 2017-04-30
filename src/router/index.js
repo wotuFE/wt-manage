@@ -16,7 +16,8 @@ export default new Router({
       name: 'contactBook',
       path: '/',
       component: contactBook
-    },{
+    },
+    {
       name: 'activity',
       path: '/activity',
       component: activity,
