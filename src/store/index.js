@@ -14,7 +14,8 @@ import contactBook from './modules/contactBook'
 Vue.use(Vuex)
 
 const state = {
-  title: '沃土前端社区'
+  title: '沃土前端社区',
+  isNew: false
 }
 
 export default new Vuex.Store({

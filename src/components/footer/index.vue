@@ -4,7 +4,7 @@
             <i class="icon iconfont">&#xe60e;</i>
             通讯录
         </mt-tab-item>
-        <mt-tab-item id="tab2">
+        <mt-tab-item id="tab2" v-bind:click="router('/activity')">
             <i class="icon iconfont">&#xe628;</i>
             活动
         </mt-tab-item>
@@ -20,7 +20,12 @@
 </template>
 <script>
     export default {
-        props:['selected']
+        props:['selected'],
+        methods: {
+            router(path) {
+                this.$router.push({path:path});
+            }
+        }
     }
 </script>
 <style>
