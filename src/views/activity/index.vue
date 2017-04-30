@@ -2,6 +2,7 @@
 .activity {
   overflow: auto;
   height: 100%;
+  display: flex;
 }
 
 </style>

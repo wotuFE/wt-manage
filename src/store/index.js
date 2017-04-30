@@ -15,7 +15,7 @@ Vue.use(Vuex)
 
 const state = {
   title: '沃土前端社区',
-  isNew: false
+  isNew: true
 }
 
 export default new Vuex.Store({
