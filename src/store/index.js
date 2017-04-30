@@ -15,7 +15,8 @@ Vue.use(Vuex)
 
 const state = {
   title: '沃土前端社区',
-  isNew: true
+  isNew: true,
+  isSelected: '2'
 }
 
 export default new Vuex.Store({
