@@ -2,7 +2,7 @@
   <div id="app">
     <top-head></top-head>
     <router-view></router-view>
-    <foot :selected="selected"></foot>
+    <foot></foot>
   </div>
 </template>
 

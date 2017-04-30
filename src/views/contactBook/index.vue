@@ -3,7 +3,9 @@
 
 <template>
   <div class="contactBook">
-    通讯录
+    <mt-index-list index="A">
+      <mt-cell title="Able"></mt-cell>
+    </mt-index-list>
   </div>
 </template>
 
