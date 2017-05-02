@@ -9,22 +9,18 @@ import getters from './getters'
 import actions from './actions'
 import mutations from './mutations'
 
-import contactBook from './modules/contactBook'
-
 Vue.use(Vuex)
 
 const state = {
   title: '沃土前端社区',
   isNew: true,
-  isSelected: '2'
+  isSelected: '2',
+  currentPage: 'contact'
 }
 
 export default new Vuex.Store({
   state,
   getters,
   actions,
-  mutations,
-  modules: {
-    contactBook
-  }
+  mutations
 })

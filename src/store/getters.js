@@ -4,5 +4,6 @@
 
 export default {
   title: state => state.title,
-  isNew: state => state.isNew
+  isNew: state => state.isNew,
+  currentPage: state => state.currentPage
 }

@@ -3,4 +3,7 @@
  */
 
 export default {
+  'UPDATE_TITLE' (state, payload) {
+    state.title = payload
+  }
 }

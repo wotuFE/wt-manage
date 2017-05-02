@@ -19,21 +19,25 @@
     </mt-tabbar>
 </template>
 <script>
-import { mapGetters } from 'vuex'
 export default {
-  mounted() {
-    console.log(this.$route);
-    console.log(this.$router);
-  },
   data () {
     return {
         selected: 'tab1',
         isSelected: 'contactBook'
     }
   },
+  computed: {
+    routeName () {
+      return this.$route.matched[1].name
+    }
+  },
+  created () {
+  },
+  mounted () {
+    this.isSelected = this.routeName
+  },
   methods: {
     router(name) {
-      console.log(this.$route);
       this.isSelected = name
       if (this.$route.name === name) return
       this.$router.push({name});

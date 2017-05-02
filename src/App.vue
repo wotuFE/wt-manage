@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-    <top-head></top-head>
     <router-view></router-view>
-    <foot></foot>
   </div>
 </template>
 
 <script>
 import topHead from './components/topHead'
 import foot from './components/footer'
+
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'app',
   components: {
@@ -19,7 +20,7 @@ export default {
     return {
       selected: 'tab1'
     }
-  },
+  }
 }
 </script>
 

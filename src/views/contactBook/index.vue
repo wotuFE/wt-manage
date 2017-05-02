@@ -3,9 +3,9 @@
 
 <template>
   <div class="contactBook">
-    <mt-index-list index="A">
+    <!--<mt-index-list index="A">
       <mt-cell title="Able"></mt-cell>
-    </mt-index-list>
+    </mt-index-list>-->
   </div>
 </template>
 
