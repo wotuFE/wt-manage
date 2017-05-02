@@ -4,8 +4,8 @@ import Router from 'vue-router'
 // 代码分块语法 (路由懒加载 -- 访问到该页面才会加载相应代码)
 const contactBook = resolve => require(['../views/contactBook'], resolve)
 const activity = resolve => require(['../views/activity'], resolve)
-const beforeActivitiesList = resolve => require(['../views/activity/beforeActivitiesList'],resolve)
-const recentActivity = resolve => require(['../views/activity/recentActivity'],resolve)
+const beforeActivitiesList = resolve => require(['../views/activity/children/beforeActivitiesList'],resolve)
+const recentActivity = resolve => require(['../views/activity/children/recentActivity'],resolve)
 
 
 Vue.use(Router)

@@ -89,13 +89,14 @@
 </script>
 <style scope>
     ul {
-        padding-bottom: 100px;
+        padding-bottom: 95px;
+        width: 100%;
+        overflow: auto;
     }
     li {
-        border: 1px solid #979797;
-        box-shadow: 1px 1px 1px #888888 ;
+        border-top: 1px solid #888888;
+        box-shadow: 1px 1px 5px #888888 ;
         padding: 5px;
         margin: 10px auto;
     }
-    
 </style>

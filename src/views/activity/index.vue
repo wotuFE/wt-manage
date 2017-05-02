@@ -2,6 +2,8 @@
 .activity {
   overflow: auto;
   height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 </style>
