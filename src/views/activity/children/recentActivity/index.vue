@@ -73,14 +73,13 @@
         margin: 0 10px;
     }
     .pad-0-10 p {
-        line-height: 20px;
         padding: 5px 0;
     }
     .buttonList {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        padding: 0 6rem;
+        padding: 0 5rem;
     }
     .bottom {
         width: 100vw;
@@ -95,8 +94,7 @@
         resize: none;
         width: 100%;
         padding: 0;
-        height: 10rem;
-        font-size: 20px;
+        height: 7rem;
         text-indent: 2em;
     }
 </style>
