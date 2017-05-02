@@ -28,7 +28,7 @@ export default {
     computed: {
       name () {
         return this.$route.name
-      }  
+      }
     },
     watch: {
       name (val) {
