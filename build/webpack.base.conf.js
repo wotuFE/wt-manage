@@ -2,9 +2,8 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
-console.log('vueLoaderConfig',vueLoaderConfig);
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -31,7 +30,7 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        // options: vueLoaderConfig
+        // options: vueLoaderConfig @laohu
         options: {
           loaders: {
             'scss': 'style-loader!css-loader!sass-loader'

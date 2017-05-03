@@ -1,9 +1,14 @@
 <template>
   <div>
-    登录前
+    hello
   </div>
 </template>
+<style lang="scss">
+  
+</style>
 
 <script>
-export default {}
+export default {
+  
+}
 </script>
