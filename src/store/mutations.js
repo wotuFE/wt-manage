@@ -10,5 +10,8 @@ export default {
   // 更改又上角内容
   'UPDATE_RIGHTOBJ'(state,payload) {
     state.rightObj = payload;
+  },
+  'USER_INFO'(state,payload) {
+    state.userInfo = payload;
   }
 }

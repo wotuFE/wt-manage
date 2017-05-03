@@ -2,7 +2,8 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
-
+var API = require('../config/API');
+var baseUrl = JSON.stringify( API[ process.env.NODE_ENV || "development" ]);
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -22,11 +23,20 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'client': '@/utils/client.js'
     }
   },
   module: {
     rules: [
+      // {
+      //   test: require.resolve('../src/store/modules/login'),
+      //   loader: "imports-loader?baseUrl=>" + JSON.stringify(API[process.env.NODE_ENV || "development"])
+      // },
+      {
+        test: require.resolve('../src/utils/client'),
+        loader: "imports-loader?baseUrl=>"+baseUrl
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',

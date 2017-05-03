@@ -1,25 +1,31 @@
 <template>
-    <router-view></router-view>
+  <router-view>
+  </router-view>
 </template>
 
 <script>
+  import {
+    mapGetters
+  } from 'vuex'
   export default {
     data() {
       return {
   
       }
     },
-    computed() {
-  
-    },
+    computed:mapGetters([
+      'isLogin'
+    ]),
     created() {
-      // this.$router.push('me/index');
+      if (!this.isLogin) {
+        this.$router.push('/login');
+      }
     },
     mounted() {
-     
+  
     },
     methods: {
-     
+  
     }
   
   }
