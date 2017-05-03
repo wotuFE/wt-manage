@@ -7,7 +7,8 @@
 <script>
 import topHead from './components/topHead'
 import foot from './components/footer'
-
+console.log(foot);
+debugger;
 import { mapGetters } from 'vuex'
 
 export default {

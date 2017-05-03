@@ -1,0 +1,25 @@
+ .register {
+     margin-top: 10px;
+ }
+ .submit {
+     margin-top: 30px;
+     display: flex;
+     justify-content: center;
+     button {
+         width: 90%;
+     }
+ }
+ .to-login {
+     margin-top: 20px;
+     display: flex;
+     justify-content: center;
+     .t {
+         color: #1685FE;
+         margin-left: 10px;
+     }
+ }
+ .tip {
+     margin-top: 10px;
+     color: red;
+     text-align: center;
+ }
