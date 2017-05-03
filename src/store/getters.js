@@ -5,5 +5,6 @@
 export default {
   title: state => state.title,
   isNew: state => state.isNew,
+  rightObj: state => state.rightObj,
   currentPage: state => state.currentPage
 }

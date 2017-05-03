@@ -4,7 +4,7 @@
         <router-link to="/" slot="left">
           <mt-button icon="back">返回</mt-button>
         </router-link>
-        <mt-button icon="more" slot="right"></mt-button>
+        <mt-button @click="save" :icon="rightObj.icon" slot="right">{{rightObj.text}}</mt-button>
       </mt-header>
     </div>
 </template>
@@ -13,9 +13,15 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Header2',
+  name: 'Header',
   computed: mapGetters([
-    'title'
-  ])
+    'title',
+    'rightObj'
+  ]),
+  methods: {
+    save() {
+      alert('save');
+    }
+  }
 }
 </script>

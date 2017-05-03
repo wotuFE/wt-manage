@@ -13,6 +13,12 @@ Vue.use(Vuex)
 
 const state = {
   title: '沃土前端社区',
+  rightObj: {
+    // 右上角的文字
+    text: '',
+    // 右上角的图标
+    icon: 'more',
+  },
   isNew: true,
   isSelected: '2',
   currentPage: 'contact'

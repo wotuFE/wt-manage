@@ -5,7 +5,10 @@ const makeIns = async function (ctx) {
         realName,
         age,
         nativePlace,
-        skillTree
+        skillTree,
+        github,
+        // 权限
+        jurisdiction
     } = ctx.request.body;
     const res = await addUser(userInfo);
     ctx.body = res;
