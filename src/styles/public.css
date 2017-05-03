@@ -1,4 +1,7 @@
 /* 公共样式 */
+body {
+    background: #EBEBEB;
+}
 .text-center {
     text-align: center;
 }

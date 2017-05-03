@@ -8,11 +8,11 @@
             <i class="icon iconfont">&#xe628;</i>
             活动
         </mt-tab-item>
-        <mt-tab-item id="tab3" :class="{'is-selected': isSelected === '3'}">
+        <mt-tab-item id="tab3" :class="{'is-selected': isSelected === '3'}" @click.native="router('finace')">
             <i class="icon iconfont">&#xe608;</i>
             财务
         </mt-tab-item>
-        <mt-tab-item id="tab4" :class="{'is-selected': isSelected === '4'}">
+        <mt-tab-item id="tab4" :class="{'is-selected': isSelected === 'me'}" @click.native="router('me')">
             <i class="icon iconfont">&#xe60a;</i>
             我
         </mt-tab-item>
@@ -39,7 +39,7 @@ export default {
   methods: {
     router(name) {
       this.isSelected = name
-      if (this.$route.name === name) return
+      if (this.$route.name === name) return;
       this.$router.push({name});
     }
   }  
@@ -47,4 +47,5 @@ export default {
 </script>
 <style>
     .iconfont {font-size: 24px !important;display: block;margin-bottom: 5px;}
+    .is-selected {background-color: #fafafa!important;border-top: 1px solid #eaeaea;}
 </style>
