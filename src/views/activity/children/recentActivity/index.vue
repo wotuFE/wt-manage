@@ -1,6 +1,18 @@
 <template>
-    <div>
+    <div class="bg-w">
         <h2>{{ activity.title }}</h2>
+        <!--<mt-index-list>
+            <div><mt-cell :title="'活动主题:' + activity.zhuti"></mt-cell></div>
+            <div><mt-cell :title="'活动发起人:' + activity.faqiren"></mt-cell></div>
+            <div><mt-cell :title="'分享人:' + activity.fenxiangren"></mt-cell></div>
+            <div><mt-cell :title="'时间:' + activity.activityTime"></mt-cell></div>
+            <div><mt-cell :title="'地点:' + activity.activityAddress"></mt-cell></div>
+            <div><mt-cell :title="'参与人列表:' + activity.participant"></mt-cell></div>
+            <mt-cell title="活动内容"></mt-cell>
+            <p style="width:90%;margin:0 auto;"> 
+                <textarea readonly>{{ activity.content }}</textarea>
+            </p>
+        </mt-index-list>-->
         <div class="content">
             <div class="pad-0-10">
                 <p>活动主题:{{ activity.zhuti }}</p>
@@ -56,14 +68,14 @@
         }
     }
 </script>
-<style scope>
+<style scoped>
     h2 {
         width: 100vw;
         text-align:  center;
         font-size: 24px;
         line-height: 36px;
-        border-bottom: 1px dotted #979797;
         margin-bottom: 0.5rem;
+        border-bottom: 1px dotted #979797;
     }
     .content {
         margin-bottom: 1rem;
@@ -96,5 +108,8 @@
         padding: 0;
         height: 7rem;
         text-indent: 2em;
+    }
+    .mint-cell {
+        min-height: 35px;
     }
 </style>

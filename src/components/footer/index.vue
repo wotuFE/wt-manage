@@ -42,7 +42,12 @@ export default {
       if (this.$route.name === name) return;
       this.$router.push({name});
     }
-  }  
+  },
+  watch: {
+    routeName(val) {
+      this.isSelected = this.routeName
+    }
+  }
 }
 </script>
 <style>

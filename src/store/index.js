@@ -20,7 +20,6 @@ const state = {
     icon: 'more',
   },
   isNew: true,
-  isSelected: '2',
   currentPage: 'contact'
 }
 
