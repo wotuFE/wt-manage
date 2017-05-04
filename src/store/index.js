@@ -22,7 +22,8 @@ const state = {
     icon: 'more'
   },
   isNew: true,
-  currentPage: 'contact'
+  currentPage: 'contact',
+  rightBtn: () => false
 }
 
 export default new Vuex.Store({

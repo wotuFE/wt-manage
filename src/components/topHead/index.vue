@@ -4,7 +4,7 @@
         <router-link to="" slot="left">
           <mt-button icon="back" @click="back">返回</mt-button>
         </router-link>
-        <mt-button @click="save" :icon="rightObj.icon" slot="right">{{rightObj.text}}</mt-button>
+        <mt-button @click="rightBtn" :icon="rightObj.icon" slot="right">{{rightObj.text}}</mt-button>
       </mt-header>
     </div>
 </template>
@@ -16,11 +16,13 @@ export default {
   name: 'Header',
   computed: mapGetters([
     'title',
-    'rightObj'
+    'rightObj',
+    'rightBtn'
   ]),
+
   methods: {
     save () {
-      alert('save')
+      alert(this.title)
     },
     back () {
       this.$router.go(-1)

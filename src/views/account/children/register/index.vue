@@ -19,7 +19,7 @@
 </style>
 
 <script>
-  import {mapMutations} from 'vuex'
+  import { mapMutations } from 'vuex'
   // import { post } from 'client'
   export default {
     data () {
@@ -33,12 +33,20 @@
     created () {
       this.UPDATE_TITLE('注册账号')
     },
-    computed () {
+    mounted () {
+      this.$store.commit('RIGHTBTN_FUNCTION', this.test)
+    },
+    destroyed () {
+      this.$store.commit('RESET_RIGHTBTN_FUNCTION')
     },
     methods: {
       ...mapMutations([
         'UPDATE_TITLE'
       ]),
+      test () {
+        console.log(this.phone)
+        console.log(this.password)
+      },
       register () {
         const { phone, password, confirmPassword } = this
         if (!phone) {
