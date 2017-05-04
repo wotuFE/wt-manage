@@ -34,7 +34,7 @@ module.exports = {
       //   loader: "imports-loader?baseUrl=>" + JSON.stringify(API[process.env.NODE_ENV || "development"])
       // },
       {
-        test: require.resolve('../src/utils/client'),
+        test: require.resolve('../src/store/actions'),
         loader: "imports-loader?baseUrl=>"+baseUrl
       },
       {

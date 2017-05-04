@@ -1,14 +1,16 @@
 const request = require('request');
-const makeIns = async function (ctx) {
+const makeIns = async function(ctx) {
     const userInfo = {
         phone,
         password
     } = ctx.request.body;
-    const res = await addUser(userInfo);
+    let res = await addUser(userInfo);
+    res = JSON.parse(res);
+    res.msg = '注册成功';
     ctx.body = res;
 }
-const addUser = function (postData) {
-    return new Promise(function (resolve, reject) {
+const addUser = function(postData) {
+    return new Promise(function(resolve, reject) {
         request.post({
             url: 'http://localhost/manage/index.php/account/addUser',
             formData: postData

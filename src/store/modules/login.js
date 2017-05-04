@@ -1,4 +1,4 @@
-import { post } from 'client'
+import api from '../actions'
 // state
 const state = {
     userInfo: null,
@@ -13,8 +13,8 @@ const getters = {
 // actions
 const actions = {
     'LOGIN'({commit,state,dispatch},{url,data}) {
-       post(url,data).then((res)=>{
-            commit('LOGIN_SUCCESS');
+       api.post(url,data).then((res)=>{
+            commit('LOGIN_SUCCESS',res.data);
        }).catch(()=>{
            alert('请求失败')
        })

@@ -20,7 +20,7 @@
 
 <script>
   import {mapMutations} from 'vuex'
-  import { post } from 'client'
+  // import { post } from 'client'
   export default {
     data() {
       return {
@@ -58,10 +58,12 @@
           this.errorMsg = '两次输入的密码不一致';
           return false;
         }
-        post('account/register',{phone,password}).then((res)=>{
+        const url = 'account/register';
+        const data = {phone,password};
+        this.$store.dispatch('_POST',{url,data}).then((res)=>{
           console.log(res);
         }).catch(()=>{
-          alert('注册失败');
+          console.log('注册失败');
         })
       }
     }
