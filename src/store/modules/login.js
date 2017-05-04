@@ -14,7 +14,7 @@ const getters = {
 const actions = {
     'LOGIN'({commit,state,dispatch},{url,data}) {
        post(url,data).then((res)=>{
-            console.log('res',res);
+            commit('LOGIN_SUCCESS');
        }).catch(()=>{
            alert('请求失败')
        })

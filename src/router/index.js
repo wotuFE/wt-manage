@@ -10,11 +10,11 @@ const activity = resolve => require(['../views/activity'], resolve)
 const beforeActivitiesList = resolve => require(['../views/activity/children/beforeActivitiesList'], resolve)
 const recentActivity = resolve => require(['../views/activity/children/recentActivity'], resolve)
 // 账号
-const login = resolve => require(['../views/login'], resolve)
-const register = resolve => require(['../views/register'], resolve)
-const me = resolve => require(['../views/me'], resolve)
-const edit = resolve => require(['../views/me/children/edit'],resolve)
-const meIndex = resolve => require(['../views/me/children/index'],resolve)
+const login = resolve => require(['../views/account/children/login'], resolve)
+const register = resolve => require(['../views/account/children/register'], resolve)
+const account = resolve => require(['../views/account'], resolve)
+const edit = resolve => require(['../views/account/children/edit'],resolve)
+const meIndex = resolve => require(['../views/account/children/index'],resolve)
 
 Vue.use(Router)
 
@@ -41,14 +41,14 @@ export default new Router({
       },
       {
         name: 'register',
-        path: '/register',
+        path: '/account/register',
         component: register
       },
       {
-        name: 'me',
-        path: '/me',
-        component: me,
-        redirect: '/me/index',
+        name: 'account',
+        path: '/account',
+        component: account,
+        redirect: '/account/index',
         children: [
           {
             name: 'edit',

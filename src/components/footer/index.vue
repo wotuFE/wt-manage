@@ -12,7 +12,7 @@
             <i class="icon iconfont">&#xe608;</i>
             财务
         </mt-tab-item>
-        <mt-tab-item id="tab4" :class="{'is-selected': isSelected === 'me'}" @click.native="router('me')">
+        <mt-tab-item id="tab4" :class="{'is-selected': isSelected === 'account'}" @click.native="router('account')">
             <i class="icon iconfont">&#xe60a;</i>
             我
         </mt-tab-item>

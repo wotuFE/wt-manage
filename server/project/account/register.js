@@ -2,13 +2,7 @@ const request = require('request');
 const makeIns = async function (ctx) {
     const userInfo = {
         phone,
-        realName,
-        age,
-        nativePlace,
-        skillTree,
-        github,
-        // 权限
-        jurisdiction
+        password
     } = ctx.request.body;
     const res = await addUser(userInfo);
     ctx.body = res;

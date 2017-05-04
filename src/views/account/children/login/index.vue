@@ -6,7 +6,7 @@
       <mt-button type="primary" @click="login">立即登录</mt-button>
     </div>
     <div class="tip">
-      <router-link to="/register"><span class="t">注册账号</span></router-link>
+      <router-link to="/account/register"><span class="t">注册账号</span></router-link>
       <span class="t2">|</span>
       <span class="t">忘记密码{{isLogin}}</span>
     </div>
@@ -37,7 +37,7 @@
     watch:{
       isLogin(isLogin) {
         if (isLogin) {
-          this.$router.push('me');
+          this.$router.push('account');
         }
       }
     },
