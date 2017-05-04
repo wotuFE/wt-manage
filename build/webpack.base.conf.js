@@ -2,9 +2,8 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
-var API = require('../config/API');
-var baseUrl = JSON.stringify( API[ process.env.NODE_ENV || "development" ]);
-function resolve(dir) {
+
+function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -23,29 +22,24 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
-      'client': '@/utils/client.js'
+      '@': resolve('src')
     }
   },
   module: {
     rules: [
-      // {
-      //   test: require.resolve('../src/store/modules/login'),
-      //   loader: "imports-loader?baseUrl=>" + JSON.stringify(API[process.env.NODE_ENV || "development"])
-      // },
       {
-        test: require.resolve('../src/store/actions'),
-        loader: "imports-loader?baseUrl=>"+baseUrl
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        include: [resolve('src'), resolve('test')],
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        // options: vueLoaderConfig @laohu
-        options: {
-          loaders: {
-            'scss': 'style-loader!css-loader!sass-loader'
-          }
-        }
+        options: vueLoaderConfig
       },
       {
         test: /\.js$/,

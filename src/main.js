@@ -10,7 +10,7 @@ import './styles/reset.css'
 import './styles/public.css'
 import './styles/icon/iconfont.css'
 
-Vue.use(Mint);
+Vue.use(Mint)
 Vue.config.productionTip = false
 
 /**

@@ -6,7 +6,9 @@ import Vuex from 'vuex'
 import getters from './getters'
 import actions from './actions'
 import mutations from './mutations'
+
 import login from './modules/login'
+
 Vue.use(Vuex)
 
 const state = {
@@ -17,7 +19,7 @@ const state = {
     // 右上角的文字
     text: '',
     // 右上角的图标
-    icon: 'more',
+    icon: 'more'
   },
   isNew: true,
   currentPage: 'contact'

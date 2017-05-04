@@ -15,14 +15,14 @@
 </template>
 
 <style scoped lang="scss">
-  @import './index.scss'
+  @import './index.scss';
 </style>
 
 <script>
   import {mapMutations} from 'vuex'
   // import { post } from 'client'
   export default {
-    data() {
+    data () {
       return {
         phone: '13800000000',
         password: '123456',
@@ -30,40 +30,39 @@
         errorMsg: ''
       }
     },
-    created() {
-      this.UPDATE_TITLE('注册账号');
+    created () {
+      this.UPDATE_TITLE('注册账号')
     },
-    computed() {
-  
+    computed () {
     },
     methods: {
       ...mapMutations([
         'UPDATE_TITLE'
       ]),
-      register() {
-        const { phone, password, confirmPassword } = this;
-        if(!phone) {
-          this.errorMsg = '请输入手机号码';
-          return false;
+      register () {
+        const { phone, password, confirmPassword } = this
+        if (!phone) {
+          this.errorMsg = '请输入手机号码'
+          return false
         }
-        if(!password) {
-          this.errorMsg = '请输入密码';
-          return false;
+        if (!password) {
+          this.errorMsg = '请输入密码'
+          return false
         }
-        if(!confirmPassword) {
-          this.errorMsg = '请再次输入密码';
-          return false;
+        if (!confirmPassword) {
+          this.errorMsg = '请再次输入密码'
+          return false
         }
-        if (password != confirmPassword) {
-          this.errorMsg = '两次输入的密码不一致';
-          return false;
+        if (password !== confirmPassword) {
+          this.errorMsg = '两次输入的密码不一致'
+          return false
         }
-        const url = 'account/register';
-        const data = {phone,password};
-        this.$store.dispatch('_POST',{url,data}).then((res)=>{
-          console.log(res);
-        }).catch(()=>{
-          console.log('注册失败');
+        const url = 'account/register'
+        const data = {phone, password}
+        this.$store.dispatch('_POST', {url, data}).then((res) => {
+          console.log(res)
+        }).catch(() => {
+          console.log('注册失败')
         })
       }
     }

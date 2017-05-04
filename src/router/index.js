@@ -13,14 +13,14 @@ const recentActivity = resolve => require(['../views/activity/children/recentAct
 const login = resolve => require(['../views/account/children/login'], resolve)
 const register = resolve => require(['../views/account/children/register'], resolve)
 const account = resolve => require(['../views/account'], resolve)
-const edit = resolve => require(['../views/account/children/edit'],resolve)
-const meIndex = resolve => require(['../views/account/children/index'],resolve)
+const edit = resolve => require(['../views/account/children/edit'], resolve)
+const meIndex = resolve => require(['../views/account/children/index'], resolve)
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-     {
+    {
       name: 'root',
       path: '/',
       redirect: { name: 'contactBook' },
@@ -52,12 +52,12 @@ export default new Router({
         children: [
           {
             name: 'edit',
-            path:'edit/:id',
+            path: 'edit/:id',
             component: edit
           },
           {
             name: 'index',
-            path:'index',
+            path: 'index',
             component: meIndex
           }
         ]

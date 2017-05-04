@@ -22,8 +22,8 @@
 export default {
   data () {
     return {
-        selected: 'tab1',
-        isSelected: 'contactBook'
+      selected: 'tab1',
+      isSelected: 'contactBook'
     }
   },
   computed: {
@@ -37,14 +37,14 @@ export default {
     this.isSelected = this.routeName
   },
   methods: {
-    router(name) {
+    router (name) {
       this.isSelected = name
-      if (this.$route.name === name) return;
-      this.$router.push({name});
+      if (this.$route.name === name) return
+      this.$router.push({name})
     }
   },
   watch: {
-    routeName(val) {
+    routeName (val) {
       this.isSelected = this.routeName
     }
   }

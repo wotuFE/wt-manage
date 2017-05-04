@@ -39,34 +39,34 @@
     </div>
 </template>
 <script>
-    export default {
-        name: 'recentActivity',
-        data() {
-            return {
-                activity: {
-                    'title': '新活动',
-                    'zhuti': 'vuex的使用分享',
-                    'faqiren': '老胡',
-                    'fenxiangren': '陈萌',
-                    'activityTime': '2017-05-14 14:30:00',
-                    'activityAddress': '很多人咖啡厅',
-                    'participant': 'gaoyu,yueyun,mm,bb,cc,aa',
-                    'participantTotle': 6,
-                    'content': '在很多人咖啡厅分享vuex的使用方法并做一个小demo'
-                }
-            }
-        },
-        methods: {
-            participateInActivities(e) {
-                console.log(e);
-                alert('参加活动');
-            },
-            leave(e) {
-                console.log(e);                
-                alert('请假');
-            }
-        }
+export default {
+  name: 'recentActivity',
+  data () {
+    return {
+      activity: {
+        'title': '新活动',
+        'zhuti': 'vuex的使用分享',
+        'faqiren': '老胡',
+        'fenxiangren': '陈萌',
+        'activityTime': '2017-05-14 14:30:00',
+        'activityAddress': '很多人咖啡厅',
+        'participant': 'gaoyu,yueyun,mm,bb,cc,aa',
+        'participantTotle': 6,
+        'content': '在很多人咖啡厅分享vuex的使用方法并做一个小demo'
+      }
     }
+  },
+  methods: {
+    participateInActivities (e) {
+      console.log(e)
+      alert('参加活动')
+    },
+    leave (e) {
+      console.log(e)
+      alert('请假')
+    }
+  }
+}
 </script>
 <style scoped>
     h2 {

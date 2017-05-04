@@ -9,9 +9,9 @@
     </ul>
 </template>
 <script>
-    export default {
-        name: 'beforeActivitiesList'
-    }
+export default {
+  name: 'beforeActivitiesList'
+}
 </script>
 <style scope>
     ul {

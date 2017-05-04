@@ -8,25 +8,21 @@
     mapGetters
   } from 'vuex'
   export default {
-    data() {
+    data () {
       return {
-  
       }
     },
-    computed:mapGetters([
+    computed: mapGetters([
       'isLogin'
     ]),
-    created() {
+    created () {
       if (!this.isLogin) {
-        this.$router.push('/login');
+        this.$router.push('/login')
       }
     },
-    mounted() {
-  
+    mounted () {
     },
     methods: {
-  
     }
-  
   }
 </script>

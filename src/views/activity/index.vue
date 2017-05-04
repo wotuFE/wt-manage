@@ -14,25 +14,25 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations } from 'vuex'
 export default {
-  mounted() {
-      if (this.$store.state.isNew) {
-          this.$router.push({name: 'recentActivity'});
-          this.UPDATE_TITLE('近期活动');
-      } else {
-          this.$router.push({name: 'beforeActivitiesList'});
-          this.UPDATE_TITLE('往期活动列表');      
-      }
+  mounted () {
+    if (this.$store.state.isNew) {
+      this.$router.push({name: 'recentActivity'})
+      this.UPDATE_TITLE('近期活动')
+    } else {
+      this.$router.push({name: 'beforeActivitiesList'})
+      this.UPDATE_TITLE('往期活动列表')
+    }
   },
-  data() {
+  data () {
     return {
     }
   },
   methods: {
     ...mapMutations([
       'UPDATE_TITLE'
-    ]),
+    ])
   },
   computed: {
     name () {
@@ -42,9 +42,9 @@ export default {
   watch: {
     name (val) {
       if (this.$store.state.isNew) {
-          this.$router.push({name: 'recentActivity'});
+        this.$router.push({name: 'recentActivity'})
       } else {
-          this.$router.push({name: 'beforeActivitiesList'});
+        this.$router.push({name: 'beforeActivitiesList'})
       }
     }
   }

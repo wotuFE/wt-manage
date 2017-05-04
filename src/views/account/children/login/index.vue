@@ -14,7 +14,7 @@
 </template>
 
 <style scoped lang="scss">
-  @import './index.scss'
+  @import './index.scss';
 </style>
 
 <script>
@@ -23,21 +23,20 @@
     mapGetters
   } from 'vuex'
   export default {
-    data() {
+    data () {
       return {
-  
       }
     },
-    created() {
-      this.UPDATE_TITLE('登录');
+    created () {
+      this.UPDATE_TITLE('登录')
     },
     computed: mapGetters([
       'isLogin'
     ]),
-    watch:{
-      isLogin(isLogin) {
+    watch: {
+      isLogin (isLogin) {
         if (isLogin) {
-          this.$router.push('account');
+          this.$router.push('account')
         }
       }
     },
@@ -45,14 +44,14 @@
       ...mapMutations([
         'UPDATE_TITLE'
       ]),
-      login() {
+      login () {
         this.$store.dispatch('LOGIN', {
           url: 'account/login',
           data: {
             phone: 13800000000,
             password: 123456
           }
-        });
+        })
       }
     }
   }

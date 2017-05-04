@@ -5,7 +5,7 @@
 export default {
   /**
    * 例：日期格式化
-   * @param {Date} date 
+   * @param {Date} date
    */
   dateFormat (date) {
     const nowDate = new Date(date)

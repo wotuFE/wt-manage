@@ -19,10 +19,10 @@ export default {
     'rightObj'
   ]),
   methods: {
-    save() {
-      alert('save');
+    save () {
+      alert('save')
     },
-    back() {
+    back () {
       this.$router.go(-1)
     }
   }

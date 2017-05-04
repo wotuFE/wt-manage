@@ -7,7 +7,6 @@
 <script>
 import topHead from './components/topHead'
 import foot from './components/footer'
-import { mapGetters } from 'vuex'
 
 export default {
   name: 'app',
@@ -15,7 +14,7 @@ export default {
     topHead,
     foot
   },
-  data() {
+  data () {
     return {
       selected: 'tab1'
     }
