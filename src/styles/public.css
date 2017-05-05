@@ -13,5 +13,6 @@ a {
     overflow: hidden;
 }
 .bg-w {
+    width: 100vw;
     background-color: #FFF;
 }

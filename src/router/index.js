@@ -9,6 +9,7 @@ const contactBook = resolve => require(['../views/contactBook'], resolve)
 const activity = resolve => require(['../views/activity'], resolve)
 const beforeActivitiesList = resolve => require(['../views/activity/children/beforeActivitiesList'], resolve)
 const recentActivity = resolve => require(['../views/activity/children/recentActivity'], resolve)
+const createActivity = resolve => require(['../views/activity/children/createActivity'], resolve)
 // 账号
 const login = resolve => require(['../views/account/children/login'], resolve)
 const register = resolve => require(['../views/account/children/register'], resolve)
@@ -74,6 +75,10 @@ export default new Router({
           name: 'beforeActivitiesList',
           path: 'beforeActivitiesList',
           component: beforeActivitiesList
+        }, {
+          name: 'createActivity',
+          path: 'createActivity',
+          component: createActivity
         }]
       }]
     }

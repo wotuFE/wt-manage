@@ -42,7 +42,7 @@ export default {
   watch: {
     name (val) {
       if (this.$store.state.isNew) {
-        this.$router.push({name: 'recentActivity'})
+        this.$router.push({name: 'createActivity'})
       } else {
         this.$router.push({name: 'beforeActivitiesList'})
       }
