@@ -7,6 +7,7 @@ import getters from './getters'
 import actions from './actions'
 import mutations from './mutations'
 
+import contactBook from './modules/contactBook'
 import login from './modules/login'
 
 Vue.use(Vuex)
@@ -32,6 +33,7 @@ export default new Vuex.Store({
   actions,
   mutations,
   modules: {
-    login
+    login,
+    contactBook
   }
 })
