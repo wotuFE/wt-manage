@@ -1,18 +1,6 @@
 <template>
     <div class="bg-w">
         <h2>{{ activity.title }}</h2>
-        <!--<mt-index-list>
-            <div><mt-cell :title="'活动主题:' + activity.zhuti"></mt-cell></div>
-            <div><mt-cell :title="'活动发起人:' + activity.faqiren"></mt-cell></div>
-            <div><mt-cell :title="'分享人:' + activity.fenxiangren"></mt-cell></div>
-            <div><mt-cell :title="'时间:' + activity.activityTime"></mt-cell></div>
-            <div><mt-cell :title="'地点:' + activity.activityAddress"></mt-cell></div>
-            <div><mt-cell :title="'参与人列表:' + activity.participant"></mt-cell></div>
-            <mt-cell title="活动内容"></mt-cell>
-            <p style="width:90%;margin:0 auto;"> 
-                <textarea readonly>{{ activity.content }}</textarea>
-            </p>
-        </mt-index-list>-->
         <div class="content">
             <div class="pad-0-10">
                 <p>活动主题:{{ activity.zhuti }}</p>
@@ -20,7 +8,7 @@
                 <p>分享人:{{ activity.fenxiangren }}</p>
                 <p>时间:{{ activity.activityTime }}</p>
                 <p>地点:{{ activity.activityAddress }}</p>
-                <p>参与人列表:{{ activity.participant }}(共{{ activity.participantTotle }}人)</p>
+                <p>参与人:{{ activity.participant }} (共{{ activity.participantTotle }}人)</p>
                 <p>活动内容:</p>
                 <p style="width:100%">
                     <textarea readonly>{{ activity.content }}</textarea>
@@ -29,7 +17,7 @@
         </div>
         <div class="bottom">
             <div class="buttonList">
-                <mt-button class="btn" size="small" type="primary" @click="participateInActivities($event)">参加活动</mt-button>
+                <mt-button class="btn" size="small" type="primary" @click="participateInActivities($event)">{{ isAttend ? 'キャンセル活動' : '参加活動'}}</mt-button>
                 <mt-button class="btn" size="small" type="danger" @click="leave($event)">请假</mt-button>
             </div>
         </div>
@@ -39,19 +27,20 @@
     </div>
 </template>
 <script>
+import { MessageBox } from 'mint-ui'
 export default {
   name: 'recentActivity',
   data () {
     return {
       activity: {
-        'title': '新活动',
-        'zhuti': 'vuex的使用分享',
+        'title': '新活動',
+        'zhuti': 'vuexの使用分け合う',
         'faqiren': '老胡',
         'fenxiangren': '陈萌',
         'activityTime': '2017-05-14 14:30:00',
-        'activityAddress': '很多人咖啡厅',
-        'participant': 'gaoyu,yueyun,mm,bb,cc,aa',
-        'participantTotle': 6,
+        'activityAddress': 'たくさんの人　コーヒー・ショップ',
+        'participant': '高于,低于,拉祜,木棉花,引用,要坚强,参加,另外人,技嘉,联合,黄褐斑,以前有,获取,李嘉诚,丼風,黒崎一護',
+        'participantTotle': 13,
         'content': '在很多人咖啡厅分享vuex的使用方法并做一个小demo'
       }
     }
@@ -59,11 +48,18 @@ export default {
   methods: {
     participateInActivities (e) {
       console.log(e)
-      alert('参加活动')
+      this.$store.commit('isAttend', !this.isAttend)
+      MessageBox.alert(this.isAttend ? '活動を参加する成功' : 'キャンセル参加活動成功')
+      // alert('参加活动')
     },
     leave (e) {
       console.log(e)
-      alert('请假')
+      MessageBox.alert(this.isAttend ? '你申请了请假' : '你已经取消了请假的申请')
+    }
+  },
+  computed: {
+    isAttend () {
+      return this.$store.state.isAttend
     }
   }
 }
@@ -91,7 +87,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        padding: 0 5rem;
+        padding: 0 2rem;
     }
     .bottom {
         width: 100vw;
@@ -99,7 +95,7 @@ export default {
         bottom: 75px;
     }
     .btn {
-        width: 80px;
+        width: 125px;
     }
     textarea {
         border:1px solid #979797;

@@ -64,6 +64,11 @@ export default new Router({
         ]
       },
       {
+        name: 'createActivity',
+        path: '/createActivity',
+        component: createActivity
+      },
+      {
         name: 'activity',
         path: '/activity',
         component: activity,
@@ -75,10 +80,6 @@ export default new Router({
           name: 'beforeActivitiesList',
           path: 'beforeActivitiesList',
           component: beforeActivitiesList
-        }, {
-          name: 'createActivity',
-          path: 'createActivity',
-          component: createActivity
         }]
       }]
     }

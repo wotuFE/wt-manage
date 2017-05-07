@@ -23,7 +23,8 @@ const state = {
   },
   isNew: true,
   currentPage: 'contact',
-  rightBtn: () => false
+  rightBtn: () => false,
+  isAttend: false
 }
 
 export default new Vuex.Store({

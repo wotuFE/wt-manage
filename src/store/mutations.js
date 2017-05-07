@@ -28,5 +28,11 @@ export default {
    */
   [types.RESET_RIGHTBTN_FUNCTION] (state) {
     state.rightBtn = () => false
+  },
+  /**
+   * 改变是否参与的状态
+   */
+  isAttend (state, payload) {
+    state.isAttend = payload
   }
 }
