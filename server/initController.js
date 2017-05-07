@@ -38,7 +38,7 @@ function initController(app) {
         })
     })
     app.use(router(_ => {
-        _.all('/', async(ctx) => {
+        _.all('/', async (ctx) => {
             ctx.body = await ctx.render('index', {list: interfaceList})
         });
     }));

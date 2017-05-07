@@ -28,7 +28,9 @@ export default {
   },
   computed: {
     routeName () {
-      return this.$route.matched[1].name
+      const fullPath = this.$route.fullPath
+      const name = fullPath.split('index/')[1].split('/')[0]
+      return name
     }
   },
   created () {

@@ -1,10 +1,13 @@
 /**
  * 异步操作
  */
+/* eslint-disable */
 import Axios from 'axios'
 const qs = require('qs') // 引入node的qs模块
+const envBaseUrl = process.env.NODE_ENV === 'development' ? '/api' : ''
 
 Axios.defaults.transformRequest = [(data) => qs.stringify(data)]
+Axios.defaults.baseURL = envBaseUrl
 
 export default {
   /**
@@ -12,8 +15,8 @@ export default {
    * @param {url, data} param1 ajax-data
    */
   '_POST' ({ state, commit, dispatch }, { url, data }) {
-    /* eslint-disable */
-    url = baseUrl + url;
+    // url = baseUrl + url
+    url[0] === '/' ? '' : url = '/' + url
     return Axios.post(url, data).then(
       (res) => {
         if (res.data.code === 666) {

@@ -5,6 +5,7 @@ import Router from 'vue-router'
 const index = resolve => require(['../views/index'], resolve)
 // 通讯录
 const contactBook = resolve => require(['../views/contactBook'], resolve)
+const details = resolve => require(['../views/contactBook/children/details'], resolve)
 // 活动
 const activity = resolve => require(['../views/activity'], resolve)
 const beforeActivitiesList = resolve => require(['../views/activity/children/beforeActivitiesList'], resolve)
@@ -34,6 +35,11 @@ export default new Router({
         name: 'contactBook',
         path: 'contactBook',
         component: contactBook
+      },
+      {
+        name: 'details',
+        path: 'contactBook/:id',
+        component: details
       },
       {
         name: 'login',
