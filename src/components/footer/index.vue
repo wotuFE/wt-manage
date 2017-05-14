@@ -8,7 +8,7 @@
             <i class="icon iconfont">&#xe628;</i>
             活动
         </mt-tab-item>
-        <mt-tab-item id="tab3" :class="{'is-selected': isSelected === '3'}" @click.native="router('finace')">
+        <mt-tab-item id="tab3" :class="{'is-selected': isSelected === '3'}" @click.native="router('income')">
             <i class="icon iconfont">&#xe608;</i>
             财务
         </mt-tab-item>
@@ -43,6 +43,11 @@ export default {
     router (name) {
       this.isSelected = name
       if (this.$route.name === name) return
+      if (name === 'income') {
+        this.$router.push({ name: 'income', params: { type: 0 } })
+      } else {
+        this.$router.push({ name })
+      }
       this.$router.push({name})
     }
   },

@@ -17,6 +17,9 @@ const register = resolve => require(['../views/account/children/register'], reso
 const account = resolve => require(['../views/account'], resolve)
 const edit = resolve => require(['../views/account/children/edit'], resolve)
 const meIndex = resolve => require(['../views/account/children/index'], resolve)
+// 财务
+const finace = resolve => require(['../views/finace'], resolve)
+const income = resolve => require(['../views/finace/children/income'], resolve)
 
 Vue.use(Router)
 
@@ -86,6 +89,16 @@ export default new Router({
           name: 'beforeActivitiesList',
           path: 'beforeActivitiesList',
           component: beforeActivitiesList
+        }]
+      },
+      {
+        name: 'finace',
+        path: '/finace',
+        component: finace,
+        children: [{
+          name: 'income',
+          path: 'income/:type',
+          component: income
         }]
       }]
     }
