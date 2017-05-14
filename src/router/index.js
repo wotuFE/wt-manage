@@ -66,17 +66,17 @@ export default new Router({
             name: 'index',
             path: 'index',
             component: meIndex
+          },
+          {
+            name: 'createActivity',
+            path: 'createActivity',
+            component: createActivity
           }
         ]
       },
       {
-        name: 'createActivity',
-        path: '/createActivity',
-        component: createActivity
-      },
-      {
         name: 'activity',
-        path: '/activity',
+        path: 'activity',
         component: activity,
         children: [{
           name: 'recentActivity',

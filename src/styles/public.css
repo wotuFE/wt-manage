@@ -16,3 +16,6 @@ a {
     width: 100vw;
     background-color: #FFF;
 }
+.picker-slot {
+  font-size: 16px;
+}

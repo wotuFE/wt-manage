@@ -75,8 +75,5 @@ export default {
   }
 }
 </script>
-<style>
-.picker-slot {
-  font-size: 16px;
-}
+<style scoped>
 </style>
