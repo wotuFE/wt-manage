@@ -33,13 +33,14 @@
   <div class="contactBook">
     <mt-index-list class="list-div" :height="height">
       <mt-index-section v-for="item in list" :key="item.index" :index="item.index">
-        <mt-cell v-for="cellItem in item.data" :key="cellItem.id" :title="cellItem.realName" @click.native="goToDetail(cellItem)">
+        <mt-cell v-for="cellItem in item.data" :key="cellItem.id" :title="cellItem.realName" :value="cellItem.phone" @click.native="goToDetail(cellItem)">
           <div class="headImg" slot="icon">
             <img :src="cellItem.headImg">
           </div>
         </mt-cell>
       </mt-index-section>
     </mt-index-list>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -57,7 +58,7 @@ export default {
     this.setHeight()
   },
   mounted () {
-    this.$store.commit('UPDATE_TITLE', '沃土前端社区通讯录')
+    this.$store.commit('UPDATE_TITLE', '通讯录')
     this.$store.commit('UPDATE_RIGHTOBJ', { text: '', icon: '' })
     this.getList(30).then(
       () => {
@@ -77,16 +78,16 @@ export default {
       const data = {
         num: num
       }
-      return this.$store.dispatch('_POST', {url, data}).then(
+      return this.$store.dispatch('POST', {url, data}).then(
         (res) => {
-          this.contactList = res.data
-          res.data.forEach((i) => {
-            this.testList.push(i.realName)
+          this.contactList = res.list
+          res.list.forEach((i) => {
+            this.testList.push(i.realName || i.nickName)
           })
           return Promise.resolve()
         },
-        (err) => {
-          throw new Error(err)
+        () => {
+          throw new Error('err')
         }
       )
     },
@@ -97,7 +98,7 @@ export default {
     // 跳转到详情页
     goToDetail (item) {
       this.$store.commit('MAN_DETAIL', item)
-      this.$router.push({name: 'details', params: {id: item.id}})
+      this.$router.push({name: 'detail', params: {id: item.id}})
     }
   }
 }

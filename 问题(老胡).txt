@@ -1,2 +1,4 @@
-1,@/components/topHead @用来干嘛
-2,header里面的路由改为事件触发不ok
+1, Navbar怎么用
+2,icofont 怎么再次添加
+3,获取当前路由信息 location.hash
+4,样式覆盖不了(add.vue)

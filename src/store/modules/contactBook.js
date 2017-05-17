@@ -16,14 +16,14 @@ const actions = {
   /**
    * 在详情页刷新页面时
    */
-  'whenRefreash' ({dispatch, commit}, id) {
+  whenRefreash ({ dispatch, commit }, id) {
     const url = '/contact/getContactList'
     const data = {
       num: 30
     }
     id = Number(id)
-    dispatch('_POST', {url, data}).then(
-      (res) => {
+    dispatch('POST', { url, data }).then(
+      res => {
         for (let i of res.data) {
           if (i.id === id) {
             commit('MAN_DETAIL', i)
@@ -32,8 +32,8 @@ const actions = {
         }
         return
       },
-      (err) => {
-        throw new Error(err)
+      error => {
+        throw new Error(error)
       }
     )
   }

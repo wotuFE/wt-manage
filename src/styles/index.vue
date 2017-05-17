@@ -8,8 +8,6 @@
       <div class="portrait">
         <img :src="userInfo.headImg" alt="头像">
         <span @click.native="toUpdate('昵称','nickName')">{{userInfo.nickName || '未设置'}}</span>
-         <span :style="{color: userInfo.sex == 1 ? 'rgb(50, 154, 228)' : 'rgb(212, 79, 196)', 
-        fontWeight: 'bold', marginLeft: '4px'}" v-text="`${userInfo.sex == 1 ? '♂' : '♀'}`"></span>
       </div>
       <div class="item">
         <mt-cell @click.native="toUpdate('手机号码','phone')" title="手机号码" is-link :value="userInfo.phone"></mt-cell>
@@ -19,12 +17,12 @@
         <mt-cell @click.native="toUpdate('github地址','github')" title="github地址" is-link :value="userInfo.github||'未设置'"></mt-cell>
       </div>
       <div class="item">
-        <mt-cell title="常用开发技术"></mt-cell>
-        <mt-cell @click.native="toUpdate('常用开发技术','skillTree')" :title="userInfo.skillTree" is-link :value="userInfo.skillTree?'':'未设置'"></mt-cell>
+        <mt-cell title="开发常用技术"></mt-cell>
+        <mt-cell @click.native="toUpdate('真实开发常用技术姓名','skillTree')" :title="userInfo.skillTree" is-link :value="userInfo.skillTree?'':'未设置'"></mt-cell>
       </div>
       <div class="item">
-        <mt-cell @click.native="toUpdate('公司','company')" title="公司" is-link :value="userInfo.company||'未设置'"></mt-cell>
-        <mt-cell @click.native="toUpdate('权限','jurisdiction')" title="权限" is-link :value="userInfo.jurisdiction||'未设置'"></mt-cell>
+        <mt-cell @click.native="toUpdate('真实姓名','jurisdiction')" title="权限" is-link value=""></mt-cell>
+        <mt-cell @click.native="logout" title="登录"></mt-cell>
       </div>
     </mt-index-list>
     <router-view></router-view>

@@ -1,6 +1,6 @@
 <template>
-    <div class="edit">
-        <mt-field label="" :placeholder="'请输入'+this.$route.params.id" autofocus="autofocus"></mt-field>
+    <div class="edit sub-router">
+        <mt-field v-model="editObj.optionValue" native.autofocus="autofocus"></mt-field>
     </div>
 </template>
 
@@ -12,23 +12,33 @@
 
 <script>
     import {
-      mapMutations
+        mapMutations,
+        mapGetters
     } from 'vuex'
+    
     export default {
-      data () {
-        return {
+        data () {
+            return {
+    
+            }
+        },
+        created() {
+            this.UPDATE_TITLE('更改' + this.editObj.title);
+            this.UPDATE_RIGHTOBJ({
+                text: '保存',
+                icon: ''
+            });
+        },
+        mounted() {
+    
+        },
+        computed: {
+            ...mapGetters([
+                'editObj'
+            ])
+        },
+        methods: {
+            ...mapMutations(['UPDATE_TITLE', 'UPDATE_RIGHTOBJ']),
         }
-      },
-      created () {
-        this.UPDATE_TITLE('更改' + this.$route.params.id)
-        this.UPDATE_RIGHTOBJ({text: '保存', icon: ''})
-      },
-      mounted () {
-      },
-      computed () {
-      },
-      methods: {
-        ...mapMutations(['UPDATE_TITLE', 'UPDATE_RIGHTOBJ'])
-      }
     }
 </script>

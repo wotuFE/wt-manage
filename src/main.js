@@ -7,7 +7,7 @@ import store from './store'
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import './styles/reset.css'
-import './styles/public.css'
+import './styles/public.scss'
 import './styles/icon/iconfont.css'
 
 Vue.use(Mint)

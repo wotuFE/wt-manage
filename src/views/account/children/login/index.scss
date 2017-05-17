@@ -1,23 +1,25 @@
  .login {
-    margin-top: 10px;
-  }
-  .submit {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    button {
-        width: 90%;
-    }
-  }
-  .tip {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      .t {
-          color: #1685FE;
-      }
-      .t2 {
-          color: #999;
-          margin: 0 15px;
-      }
-  }
+   top: 50px;
+ }
+
+ .submit {
+   margin-top: 30px;
+   display: flex;
+   justify-content: center;
+   button {
+     width: 90%;
+   }
+ }
+
+ .tip {
+   margin-top: 20px;
+   display: flex;
+   justify-content: center;
+   .t {
+     color: #1685FE;
+   }
+   .t2 {
+     color: #999;
+     margin: 0 15px;
+   }
+ }

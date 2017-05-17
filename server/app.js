@@ -10,7 +10,7 @@ const koaBody = require('koa-body');
 // 设置静态资源目录
 const serv = require('koa-static');
 // 配置swig模板,root:后面跟的必须是views
-app.context.render = co.wrap(render({root: './views', autoescape: true, cache: 'memory', writeBody: false, ext: 'html'}))
+app.context.render = co.wrap(render({ root: './views', autoescape: true, cache: 'memory', writeBody: false, ext: 'html' }))
 app.use(serv(__dirname + '/static'));
 app.use(cors());
 app.use(koaBody({
@@ -21,6 +21,6 @@ app.use(koaBody({
 
 const initController = require('./initController.js');
 initController(app);
-app.listen(7777, function() {
+app.listen(7777, function () {
     console.log('server start at port: 7777');
 })

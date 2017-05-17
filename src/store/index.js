@@ -9,6 +9,8 @@ import mutations from './mutations'
 
 import contactBook from './modules/contactBook'
 import login from './modules/login'
+import edit from './modules/edit'
+import finace from './modules/finace'
 
 Vue.use(Vuex)
 
@@ -24,7 +26,7 @@ const state = {
   },
   isNew: true,
   currentPage: 'contact',
-  rightBtn: () => false,
+  // rightBtn: () => false,
   isAttend: false
 }
 
@@ -35,6 +37,8 @@ export default new Vuex.Store({
   mutations,
   modules: {
     login,
-    contactBook
+    edit,
+    contactBook,
+    finace
   }
 })

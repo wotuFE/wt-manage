@@ -1,5 +1,5 @@
 <style lang="scss" scoped>
-  @import './index.scss';
+  @import './index.scss'
 </style>
 
 <template>
@@ -48,7 +48,7 @@
     mapGetters
   } from 'vuex'
   export default {
-    data() {
+    data () {
       return {
   
       }
@@ -60,7 +60,7 @@
   
     },
     mounted() {
-      this.UPDATE_TITLE('个人信息');
+      this.UPDATE_TITLE('个人信息')
     },
     methods: {
       ...mapMutations([

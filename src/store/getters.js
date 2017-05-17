@@ -7,5 +7,5 @@ export default {
   isNew: state => state.isNew,
   rightObj: state => state.rightObj,
   currentPage: state => state.currentPage,
-  rightBtn: state => state.rightBtn
+  // rightBtn: state => state.rightBtn
 }
