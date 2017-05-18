@@ -8,13 +8,16 @@ const detail = resolve =>
   require(['@/views/contactBook/children/detail'], resolve)
 // 活动
 const activity = resolve => require(['@/views/activity'], resolve)
+const addShare = resolve =>
+  require(['@/views/activity/children/addShare'], resolve)
 // 财务
 const finace = resolve => require(['@/views/finace'], resolve)
 const finace_add = resolve => require(['@/views/finace/children/add'], resolve)
 // 账户
 const account = resolve => require(['@/views/account'], resolve)
 const login = resolve => require(['@/views/account/children/login'], resolve)
-const register = resolve => require(['@/views/account/children/register'], resolve)
+const register = resolve =>
+  require(['@/views/account/children/register'], resolve)
 const edit = resolve => require(['@/views/account/children/edit'], resolve)
 
 export default new Router({
@@ -38,7 +41,14 @@ export default new Router({
     {
       path: '/activity',
       name: 'activity',
-      component: activity
+      component: activity,
+      children: [
+        {
+          path: 'add',
+          name: 'add',
+          component: addShare
+        }
+      ]
     },
     {
       path: '/finace',
