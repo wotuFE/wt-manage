@@ -4,7 +4,7 @@
 /* eslint-disable */
 import Axios from 'axios'
 const qs = require('qs') // 引入node的qs模块
-const envBaseUrl = process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:7777' : ''
+const envBaseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:7777' : 'http://www.yinjianquan.cn:7777'
 
 Axios.defaults.transformRequest = [(data) => qs.stringify(data)]
 Axios.defaults.baseURL = envBaseUrl
